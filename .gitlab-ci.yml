@@ -10,7 +10,7 @@ stages:
 flake8:
   stage: statische Analysen
   tags:
-    - docker
+    - ubuntu
     - linux
   script: 
     - flake8 *.py
