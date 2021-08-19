@@ -42,4 +42,8 @@ pytest:
     - ubuntu
     - linux
    script:
-    - python -m pytest
+    - pwd
+    - ls -l
+    - export PYTHONPATH="$PYTHONPATH:."
+    - python -c "import sys;print(sys.path)"
+    - pytest
