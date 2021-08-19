@@ -31,7 +31,7 @@ pylint:
   stage: Linting
   allow_failure: true
   script:
-    - pylint -d C0301 *.py
+    - pylint -d C0301, E128 *.py
   tags:
     - ubuntu
     - linux
