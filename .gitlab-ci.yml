@@ -13,4 +13,4 @@ flake8:
     - ubuntu
     - linux
   script: 
-    - flake8 *.py
+    - flake8 --max-line-length=120 --ignore=F401 *.py
