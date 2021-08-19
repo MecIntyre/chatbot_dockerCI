@@ -2,6 +2,8 @@ image: "python:3.9.5"
 
 before_script:
   - python3 --version
+  - python3 - m venv $CI_BUILDS_DIR/venv
+  - export PATH="$CI_BUILDS_DIR/venv/bin:$PATH"
   - pip3 install -r requirements.txt
 
 stages:
