@@ -9,6 +9,15 @@ before_script:
 stages:
   - Linting
 
+mypy:
+  stage: Linting
+  script:
+    - python3 -m mypy --ignore-missing-imports chatbot-webgui.py
+    - python3 -m mypy --ignore-missing-imports chatbot_ai.py
+  tags:
+    - ubuntu
+    - linux
+
 flake8:
   stage: Linting
   tags:
