@@ -42,4 +42,4 @@ unittest:
     - ubuntu
     - linux
    script:
-    - python3 -m unittest
+    - python3 test*
