@@ -5,9 +5,11 @@ before_script:
   - python3 - m venv $CI_BUILDS_DIR/venv
   - export PATH="$CI_BUILDS_DIR/venv/bin:$PATH"
   - pip3 install -r requirements.txt
+  - cp "$configfile" "$(pwd)/config.ini"
 
 stages:
   - Linting
+  - Testing
 
 mypy:
   stage: Linting
@@ -34,3 +36,12 @@ pylint:
   tags:
     - ubuntu
     - linux
+
+pytest:
+   stage: Testing
+   tags:
+    - ubuntu
+    - linux
+   script:
+    - coverage run -m pytest
+    - coverage report
