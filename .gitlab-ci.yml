@@ -36,14 +36,10 @@ pylint:
     - ubuntu
     - linux
 
-pytest:
+unittest:
    stage: Testing
    tags:
     - ubuntu
     - linux
    script:
-    - pwd
-    - ls -l
-    - export PYTHONPATH="$PYTHONPATH:."
-    - python -c "import sys;print(sys.path)"
-    - pytest
+    - python3 -m unittest
