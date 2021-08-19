@@ -23,6 +23,8 @@ Keras-Preprocessing==1.1.2
 MarkupSafe==2.0.1
 mccabe==0.6.1
 mkl==2021.2.0
+mypy==0.812
+mypy-extensions==0.4.3
 nltk==3.6.2
 numpy==1.19.5
 oauthlib==3.1.1
