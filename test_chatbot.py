@@ -5,12 +5,11 @@ from chatbot_ai import Chatbot
 class TestChatBot(unittest.TestCase):
     def test_intelligent_answers(self):
         """Test der intelligenten Antworten"""
-        self.__zufallsantworten = ["Oh wirklich...", "Interessant", "Das kann man so sehen.", "Ich verstehe..."]
         self.__reaktionen = {"hallo": "aber hallo",
                     "geht": "Was verstehst Du darunter",
                     "schmeckt": "Ich habe keinen Geschmackssinn"}
         __data = ["hallo du", "geht es dir gut", "schmeckt die Suppe"]
-        __bot = Chatbot(self.__reaktionen, self.__zufallsantworten)
+        __bot = Chatbot(self.__reaktionen)
         for sentence in __data:
             __bot.set_Message(sentence)
             self.__response = __bot.get_response()
