@@ -25,13 +25,13 @@ flake8:
     - ubuntu
     - linux
   script: 
-    - flake8 --max-line-length=120 --ignore=F401 *.py
+    - flake8 --max-line-length=120 --ignore=F401,E128 *.py
 
 pylint:
   stage: Linting
   allow_failure: true
   script:
-    - pylint -d C0301, E128 *.py
+    - pylint -d C0301 *.py
   tags:
     - ubuntu
     - linux
