@@ -42,8 +42,8 @@ pytest:
     - ubuntu
     - linux
    script:
-    - pytest --junitxml=report.xml
-   artifacts:
-     when: always
-     reports:
-       junit: report.xml
+    - pwd
+    - ls -l
+    - export PYTHONPATH="$PYTHONPATH:."
+    - python -c "import sys;print(sys.path)"
+    - pytest
