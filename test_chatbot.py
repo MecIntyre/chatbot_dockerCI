@@ -4,7 +4,8 @@ from chatbot_ai import Chatbot_ai
 
 class TestChatBot(unittest.TestCase):
     def test_intelligent_answers(self):
-        with open("v3/intents.json"):
+        jsonFile="v3/intents.json"
+        with open(jsonFile):
             """Test der intelligenten Antworten"""
             self.__reaktionen = {"greetings": "Hallo",
                         "goodbye": "Sehe Dich später",
@@ -13,7 +14,7 @@ class TestChatBot(unittest.TestCase):
                         "shop": "Heute gibt es Kekse!",
                         "hours": "Wann ist die Öffnungszeit"}
             __data = ["Guten Tag", "Tschö", "Wie alt bist Du"]
-            __bot = Chatbot_ai(self.__reaktionen)
+            __bot = Chatbot_ai(jsonFile)
             for sentence in __data:
                 __bot.set_Message(sentence)
                 self.__response = __bot.get_response()
