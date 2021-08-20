@@ -3,7 +3,7 @@
 
 import logging
 from flask import Flask, render_template, request, flash
-from chatbot_ai import chatbot_ai
+from chatbot_ai import Chatbot_ai
 from pathlib import Path
 
 
@@ -24,7 +24,7 @@ def index():
         if not chatbot_input:
             flash("Ohne Frage kann ich nicht antworten")
         else:
-            bot = chatbot_ai("v3/intents.json")
+            bot = Chatbot_ai("v3/intents.json")
             bot.set_Message(chatbot_input)
             chatbot_label = bot.get_Response()
     p = Path(__file__).parent / 'templates'
