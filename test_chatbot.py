@@ -25,8 +25,6 @@ class TestChatBot(unittest.TestCase):
         except Exception:
             self.words = []
             self.labels = []
-            docs_x = []
-            docs_y = []
 
             for sentence in __data:
                 __bot.set_Message(sentence)
