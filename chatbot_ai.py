@@ -12,7 +12,7 @@ from nltk.stem.lancaster import LancasterStemmer
 from nltk.tokenize import word_tokenize
 
 
-class chatbot_ai:
+class Chatbot_ai:
     def __init__(self, jsonFile):
         self.stemmer = LancasterStemmer()
 
