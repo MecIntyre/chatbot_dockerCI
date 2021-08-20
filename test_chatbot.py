@@ -1,5 +1,10 @@
 import unittest
 from chatbot_ai import Chatbot_ai
+from chatbot_ai import nltk
+from chatbot_ai import training
+from chatbot_ai import output
+from chatbot_ai import pickle
+from chatbot_ai import f
 
 
 class TestChatBot(unittest.TestCase):
@@ -15,6 +20,14 @@ class TestChatBot(unittest.TestCase):
                         "hours": "Wann ist die Öffnungszeit"}
             __data = ["Guten Tag", "Tschö", "Wie alt bist Du"]
             __bot = Chatbot_ai(jsonFile)
+        try:
+            pickle.dump((self.words, self.labels, training, output), f)
+        except Exception:
+            self.words = []
+            self.labels = []
+            docs_x = []
+            docs_y = []
+
             for sentence in __data:
                 __bot.set_Message(sentence)
                 self.__response = __bot.get_response()

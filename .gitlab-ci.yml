@@ -42,4 +42,4 @@ unittest:
     - ubuntu
     - linux
    script:
-    - python3 -W ignore:Import,*.pickle test*
+    - python3 test*
