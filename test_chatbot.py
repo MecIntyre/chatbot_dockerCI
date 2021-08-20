@@ -4,7 +4,7 @@ from chatbot_ai import Chatbot
 
 class TestChatBot(unittest.TestCase):
     def test_intelligent_answers(self):
-        with open("v3/intens.json") as f:
+        with open("v3/intens.json"):
             """Test der intelligenten Antworten"""
             self.__reaktionen = {"greetings": "Hallo",
                         "goodbye": "Sehe Dich später",
